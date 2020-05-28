@@ -12,6 +12,7 @@
     ]
   },
   "scripts": {
+    "start": "npm run styleguide",
     "serve": "npx vue-cli-service serve",
     "devstart": "npx vue-cli-service serve",
     "deve2e": "npx cypress open",
