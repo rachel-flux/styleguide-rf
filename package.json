@@ -1,47 +1,95 @@
 {
-  "name": "rachel",
+  "name": "fm-client",
   "version": "0.1.0",
   "private": true,
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "npx vue-cli-service serve",
+    "devstart": "npx vue-cli-service serve",
+    "deve2e": "npx cypress open",
+    "build": "npx vue-cli-service build",
+    "servebuild": "npx serve -p 8080 -s dist",
+    "lint": "npx vue-cli-service lint",
+    "test:unit": "npx vue-cli-service test:unit",
+    "test:e2e": "npx cypress run",
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.9.22",
+    "@ibm/plex": "^4.0.2",
+    "@sentry/browser": "^5.15.5",
+    "@sentry/integrations": "^5.15.5",
+    "auth0-js": "^9.13.2",
+    "auth0-lock": "^11.24.0",
+    "axios": "^0.19.2",
     "core-js": "^3.6.5",
+    "jsonwebtoken": "^8.5.1",
+    "lodash-es": "^4.17.15",
+    "material-design-icons-iconfont": "^5.0.1",
+    "moment": "^2.25.3",
+    "moment-timezone": "^0.5.28",
+    "retry-axios": "^2.1.3",
+    "sharp": "^0.25.2",
+    "short-uuid": "^3.1.1",
+    "sortablejs": "^1.10.2",
+    "survey-vue": "^1.7.6",
+    "surveyjs-widgets": "^1.7.6",
     "vue": "^2.6.11",
-    "vuetify": "^2.2.11"
+    "vue-router": "^3.1.6",
+    "vue-wait": "^1.4.8",
+    "vue2-editor": "^2.10.2",
+    "vuedraggable": "^2.23.2",
+    "vuejs-logger": "^1.5.4",
+    "vuetify": "^2.2.28",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.4.0",
-    "@vue/cli-plugin-eslint": "~4.4.0",
-    "@vue/cli-service": "~4.4.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
+    "@cypress/code-coverage": "^3.7.2",
+    "@vue/cli-plugin-babel": "^4.3.1",
+    "@vue/cli-plugin-eslint": "^4.3.1",
+    "@vue/cli-service": "^4.3.1",
+    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/test-utils": "^1.0.2",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
+    "babel-jest": "^26.0.1",
+    "css-loader": "^3.5.3",
+    "cypress": "^4.5.0",
+    "cypress-failed-log": "^2.7.0",
+    "deepmerge": "^4.2.2",
+    "eslint": "^7.0.0",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "vue-cli-plugin-vuetify": "~2.0.5",
+    "eslint-plugin-vuetify": "^1.0.0-beta.6",
+    "fibers": "^5.0.0",
+    "istanbul-lib-coverage": "^3.0.0",
+    "jimp": "^0.10.3",
+    "lint-staged": "^10.2.2",
+    "lodash": "^4.17.15",
+    "nyc": "^15.0.1",
+    "replace-in-file": "^6.0.0",
+    "responsive-loader": "^1.2.0",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "serve": "^11.3.0",
+    "style-loader": "^1.2.1",
+    "stylus": "^0.54.7",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-styleguidist": "^4.23.3",
+    "vue-cli-plugin-vuetify": "^2.0.5",
     "vue-template-compiler": "^2.6.11",
-    "vuetify-loader": "^1.3.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+    "vuetify-loader": "^1.4.3",
+    "webpack-bundle-analyzer": "^3.7.0"
+  }
 }
